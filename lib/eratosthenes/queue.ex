@@ -37,7 +37,7 @@ defmodule Eratosthenes.Queue do
   end
 
   def reinsert(%Queue{left: left, right: right}, x, xs) do
-    union(left |> insert(x, xs), right)
+    left |> insert(x, xs) |> union(right)
   end
 
   defp singleton(x, xs) do
